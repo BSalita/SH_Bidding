@@ -32,17 +32,17 @@ Create a dataset of structured game data suitable for training AI to bid at supe
   
    - Create a dict of bidding expressions to their postfix counterpart. Postfix is simplier when applying bidding expressions to the actual data.
 
-   - Currently there are 55 bidding terms (e.g. Balanced, HCP, Solid) and 400 different bidding expressions (e.g. 'Balanced', 'HCP >= 15') used by BBO.
+   - Currently there are 55 terms in the bidding vocabulary (e.g. Balanced, HCP, Solid) and 400 bidding expressions (e.g. 'Balanced', 'HCP >= 15', 'SL_H < 5') used by BBO.
 
    - For a bid to be used in an auction, every bidding expression in the list, when applied to the current hand, must evaluate to True. Otherwise the next candidate bid is evaluated. If no bids have an all True expression list, the default default action is to pass.
 
 5. **Transform the Endplay Native DataFrame into a Project Native DataFrame:**
 
-6. Transform the Endplay-native dataframe to the project's native format.
+   - Project native format is dictated by the specific requirements of this project’s analytical tools and methodologies. No matter the source of the game data (ACBL, BBO, French Bridge, etc.), it's first coalesced into the source's native format and then transformed into this project's native format.
 
-   Project native format is dictated by the specific requirements of this project’s analytical tools and methodologies. No matter the source of the game data (ACBL, BBO, French Bridge, etc.), it's first coalesced into the source's native format and then transformed into this project's native format.
+6. Clean and augment the data. There are over 1000 columns which can be augmented from a deal (e.g. Hands, suit lengths, HCP, individual cards, etc.). Augmenting includes creating columns for every bidding expression (e.g. Balanced, HCP, SL\_[CDHS], Solid\_[CDHS] Rebiddable\_[CDHSN].
 
-   Clean and augment the data. There are over 1000 columns which can be augmented from a deal (e.g. Hands, suit lengths, HCP, individual cards, etc.). Augmenting includes creating columns for every bidding expression (e.g. Balanced, HCP, SL\_[NESW]\_[CDHS], Solid\_[CDHS] Rebiddable\_[CDHSN].
+7. Create a bidding table of all BBO auctions extracted from .lin files. The table has a unique entry for every bid of every auction. The table is currently 1.7 million entries but, when complete, will have 2 to 5 million entries. Entries have a structure of tuple(index number, tuple(prior bids), tuple(candidate bid,), 'textual description', ['bidding expression'*]. There may be zero or more bidding expressions. The bidding table exists as both a python file and is pickled in various forms.
 
 
 ### **Pipeline 2: Create Target Dataset**

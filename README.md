@@ -19,7 +19,7 @@ Create a dataset of structured game data suitable for training AI to bid at supe
    - Validate the data
    - Reject invalid data.
 
-3. **Flatten Board objects into an Endplay-Native DataFrame:**
+3. **Flatten Board objects into an Endplay-native dataFrame:**
 
    - Coalesce Board objects into an Endplay-native dataframe.
    - All data must be mapped into columns, might require flattening or unnesting operations.
@@ -36,7 +36,7 @@ Create a dataset of structured game data suitable for training AI to bid at supe
 
    - For a bid to be used in an auction, every bidding expression in the list, when applied to the current hand, must evaluate to True. Otherwise the next candidate bid is evaluated. If no bids have an all True expression list, the default default action is to pass.
 
-5. **Transform the Endplay Native DataFrame into a Project Native DataFrame:**
+5. **Transform the Endplay native dataFrame into a project native dataFrame:**
 
    - Project native format is dictated by the specific requirements of this project’s analytical tools and methodologies. No matter the source of the game data (ACBL, BBO, French Bridge, etc.), it's first coalesced into the source's native format and then transformed into this project's native format.
 
@@ -45,7 +45,7 @@ Create a dataset of structured game data suitable for training AI to bid at supe
 7. Create a bidding table of all BBO auctions extracted from .lin files. The table has a unique entry for every bid of every auction. The table is currently 1.7 million entries but, when complete, will have 2 to 5 million entries. Entries have a structure of tuple(index number, tuple(prior bids), tuple(candidate bid,), 'textual description', ['bidding expression'*]. There may be zero or more bidding expressions. The bidding table exists as both a python file and is pickled in various forms.
 
 
-### **Pipeline 2: Create Target Dataset**
+### **Pipeline 2: Create target dataset**
 
 Create a target dataset of structured game data suitable for inference. The dataset will be used to infer bidding auctions. The steps are very similar to Process 1 above.
 
@@ -56,27 +56,10 @@ Create a target dataset of structured game data suitable for inference. The data
 3. Transform the source-native dataframe into project-native dataframe.
 4. Clean and augment the data. There are over 1000 columns which can be augmented from a deal (e.g. Hands, suit lengths, HCP, individual cards, etc.). Augmenting includes creating columns for every bidding expression as described in previous section.
 
-### **Pipeline 3: Apply Bidding E:**
+### **Pipeline 3: Apply bidding expression list to target dataset:**
 
-####
+For each entry in the bidding table, apply the entry's bidding expression list to the data. If the target dataset consists of 1 million deals and the bidding table has 2 million entries, the result of this process is a dataframe 1 million rows by 2 million columns of booleans. Looks scary but the time required for this process, thanks to polars dataframe efficiency, is currently 20 minutes. With improved hardware (GPU) and algorithms, this process might be driven down to less than 5 minutes.
 
-**Steps:**
-
-1. **For Every Bid:**
-
-   - Create a table containing:
-     - Bid details.
-     - Context (e.g., previous bid).
-     - Announcement text.
-     - Canonical criteria expressions.
-
-2. **Aggregate Bidding Data:**
-
-   - Construct and validate the results DataFrame, ensuring that criteria expressions align with each corresponding deal and bid.
-
----
-
-## **Create the Bidding Table Results DataFrame with Boolean Outcomes**
 
 
 

@@ -53,7 +53,7 @@ Create a target dataset of structured game data suitable for inference. The data
 #### **Steps:**
 
 1. **Download game data:**
-    - Good sources of plentiful and robust data include ACBL, BBO, ffbridge, or PBN files.
+    - Good sources of plentiful and robust data include ACBL, BBO, ffbridge, or PBN files. A benefit of using BBO data is that its auction serves as ground-truthish for inferred auctions.
 2. **Download to dataframe:**
     - Read the downloaded data, clean, coalesce into a source-native dataframe. Endplay can be used to read .lin, .pbn files. Minimum necessary columns are Deal.
 3. **Transform to native:**

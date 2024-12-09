@@ -10,7 +10,7 @@ Create a dataset of structured game data suitable for training AI to bid at supe
 
    - Retrieve game data from BBO.
    - The AI training process favors lots of data.
-   - Downloads are in .lin file format, which contains records of deals, bids, bid's descriptions and results.
+   - Downloads are in .lin file format, which contains records of deals, auction, bid's descriptions, card play and results.
 
 2. **Read .lin files, structure the data, clean:**
 

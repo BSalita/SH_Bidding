@@ -63,7 +63,7 @@ Create a target dataset of structured game data suitable for inference. The data
 
 ### **Pipeline 3: Create bidding table results dataframe:**
 
-For each entry in the bidding table, apply the entry's bidding expression list to the target dataset (vectorized AND operations). This is for a batch processing use case. Processing a single data deal needs another approach. If the target dataset consists of 1 million deals and the bidding table has 2 million entries, the result of this process is a dataframe of 1 million rows by 2 million columns -- all booleans. Performance looks scary but the time required for this process, thanks to polars dataframe efficiency, is 5 minutes.
+For each entry in the bidding table, apply the entry's bidding expression list to the target dataset (vectorized AND operations). This is for a batch processing use case. Processing a small number of deal needs a different approach. If the target dataset consists of 1 million deals and the bidding table has 2 million entries, the result of this process is a dataframe of 1 million rows by 2 million columns -- all booleans. Performance looks scary but the time required for this process, thanks to polars dataframe efficiency, is 5 minutes.
 
 ### **Pipeline 4: Cascade booleans to candidate bids:**
 

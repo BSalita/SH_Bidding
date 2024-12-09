@@ -34,7 +34,7 @@ Create a dataset of structured game data suitable for training AI to bid at supe
 
     - Currently there are 55 terms in the bidding vocabulary (e.g. Balanced, HCP, Solid) and 400 bidding expressions (e.g. 'Balanced', 'HCP >= 15', 'SL_H < 5') used by BBO.
 
-    - For a bid to be used in an auction, every bidding expression in the list, when applied to the current hand, must evaluate to True. Otherwise the next candidate bid is evaluated. If no bids have an all True expression list, the default default action is to pass.
+    - For a bid to be used in an auction, every bidding expression in the list, when applied to the current hand, must evaluate to True. Otherwise the next candidate bid is evaluated. If no bids have an all True evaluation results, the default default action is to pass.
 
 5. **Transform the Endplay native dataFrame into a project native dataFrame:**
 

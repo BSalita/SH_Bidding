@@ -48,7 +48,7 @@ Create a dataset of structured game data suitable for training AI to bid at supe
 
 ### **Pipeline 2: Create target dataset**
 
-Create a target dataset of structured game data suitable for inference. The dataset will augmented with lots of columns including columns needed to infer bidding auctions. The steps are very similar to Process 1 above.
+Create a target dataset of structured game data suitable for inference. The dataset will augmented with lots of columns including columns needed to infer bidding auctions. The steps are very similar to Pipleline 1 above.
 
 #### **Steps:**
 

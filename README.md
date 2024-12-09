@@ -54,9 +54,9 @@ Create a target dataset of structured game data suitable for inference. The data
 
 1. **Download game data:**
     - Good sources of plentiful and robust data include ACBL, BBO, ffbridge, or PBN files. A benefit of using BBO data is that its auction serves as ground-truthish for inferred auctions.
-2. **Download to dataframe:**
+2. **Download to source-native dataframe:**
     - Read the downloaded data, clean, coalesce into a source-native dataframe. Endplay can be used to read .lin, .pbn files. Minimum necessary columns are ['Deal'] but board results columns make for more interesting analysis.
-3. **Transform to native:**
+3. **Transform to project-native dataframe:**
     - Transform the source-native dataframe into project-native dataframe.
 4. **Clean and augment:**
     - Clean and augment the data. There are over 1000 columns which can be augmented from a deal (e.g. Hands, suit lengths, HCP, individual cards, etc.). Augmenting includes creating columns for every bidding expression as described in previous section.

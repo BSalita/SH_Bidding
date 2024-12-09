@@ -26,7 +26,7 @@ Create a dataset of structured game data suitable for training AI to bid at supe
 
 4. **Extract bidding criteria from bid descriptions:**
 
-    - Lin files contain bid descriptions (announcements) which are a description of the criteria for making the bid (e.g., point ranges, suit distributions). The rules of bridge require complete revelation of bidding system to opponents.
+    - Lin files contain bid descriptions (announcements) which are a description of the criteria for making the bid (e.g., point ranges, suit distributions). Descriptions exist because the rules of bridge require complete revelation of bidding system to opponents.
 
     - The descriptions are parsed, cleaned, and transformed into a structured list (strings) of bidding criteria expressions. The expressions should use familiar vernacular. Each expression may be 1 to 3 python-like terms. The list of expressions may be empty or as many as 16 items. For example, 1NT opening bid might have a bidding expression list of 3 items: ['Balanced', 'HCP >= 15', 'HCP <= 17'].
   

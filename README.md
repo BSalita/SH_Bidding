@@ -63,7 +63,7 @@ Create a target dataset of structured game data suitable for inference. The data
 
 ### **Pipeline 3: Create bidding table results dataframe:**
 
-For each entry in the bidding table, apply the entry's bidding expression list to the target dataset (vectorized AND operations). This is for a batch processing use case. Processing a small number of deal needs a different approach. If the target dataset consists of 1 million deals and the bidding table has 2 million entries, the result of this process is a dataframe of 1 million rows by 2 million columns -- all booleans. Performance looks scary but the time required for this process, thanks to polars dataframe efficiency, is 5 minutes.
+For each entry in the bidding table, apply the entry's bidding expression list to the target dataset (vectorized boolean AND operations). This is for a batch processing use case. Processing a small number of deal needs a different approach. If the target dataset consists of 1 million deals and the bidding table has 2 million entries, the result of this process is a dataframe of 1 million rows by 2 million columns -- all booleans. Performance looks scary but the time required for this process, thanks to polars dataframe efficiency, is 5 minutes.
 
 ### **Pipeline 4: Cascade booleans to candidate bids:**
 
@@ -71,7 +71,7 @@ Starting with the opening bid columns (about 30 of the 2 million columns which h
 
 ### **Pipeline 5: Find Auctions:**
 
-Since we've already computed all 2 million bidding sequences for the entire target dataset, we are positioned to get all sorts of no cost data analysis. Want to know all possible bidding sequences for a deal? Simply filter all the True values in the deal's dataframe row, a vectorized horizontal operation, to obtain a list of True's column names. Use the list of column names to lookup the bidding table entries. Now you have a list of all possible auctions each guarenteed to meet all bidding criteria.
+Since we've already computed all 2 million bidding sequences for the entire target dataset, we are well positioned to get all sorts of no cost data analysis. Want to know all possible bidding sequences for a deal? Simply filter all the True values in the deal's dataframe row, a vectorized horizontal operation, to obtain a list of True's column names. Use the list of column names to lookup the bidding table entries. Now you have a list of all possible auctions each guarenteed to meet all bidding criteria.
 
 
 

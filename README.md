@@ -38,7 +38,7 @@ Create a dataset of structured game data suitable for training AI to bid at supe
 
 5. **Transform the Endplay native dataFrame into a project native dataFrame:**
 
-    - Project native format is dictated by the specific requirements of this project’s analytical tools and methodologies. No matter the source of the game data (ACBL, BBO, French Bridge, etc.), it's first coalesced into the source's native format and then transformed into this project's native format.
+    - Project native format is dictated by the specific requirements of this project’s analytical tools and methodologies. No matter the source of the game data (ACBL, BBO, French Bridge, etc.), it's first coalesced into a dataframe of the source's native format and then transformed into a dataframe of the project's native format.
 
 6. **Clean and augment the data:**
     - There are over 1000 columns which can be augmented from a deal (e.g. Hands, suit lengths, HCP, individual cards, etc.). Augmenting includes creating columns for every bidding expression (e.g. Balanced, HCP, SL\_[CDHS], Solid\_[CDHS] Rebiddable\_[CDHSN].

@@ -41,7 +41,7 @@ Create a dataset of structured game data suitable for training AI to bid at supe
     - Project native format is dictated by the specific requirements of this project’s analytical tools and methodologies. No matter the source of the game data (ACBL, BBO, French Bridge, etc.), it's first coalesced into a dataframe of the source's native format and then transformed into a dataframe of the project's native format.
 
 6. **Clean and augment the data:**
-    - There are over 1000 columns which can be augmented from a deal (e.g. Hands, suit lengths, HCP, individual cards, etc.). Augmenting includes creating columns for every bidding expression (e.g. Balanced, HCP, SL\_[CDHS], Solid\_[CDHS] Rebiddable\_[CDHSN].
+    - There are over 1000 columns which can be augmented from a deal (e.g. Hands, suit lengths, HCP, individual cards, etc.). Augmenting includes creating columns for every bidding expression (e.g. Balanced, HCP, SL\_[CDHS], Solid\_[CDHS], Rebiddable\_[CDHSN].
 
 7. **Create a bidding table:**
     - Create a bidding table of all BBO auctions extracted from .lin files. The table has a unique entry for every bid of every auction. The table is currently 1.7 million entries but, when complete, will have 2 to 5 million entries. Entries have a structure of tuple(index number, tuple(prior bids), tuple(candidate bid,), 'textual description', ['bidding expression'*]. There may be zero or more bidding expressions. The bidding table exists as both a python file and is pickled in various forms.

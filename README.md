@@ -1,7 +1,7 @@
 ## An implementation of an AI which bids contract bridge deals at a superhuman level.
 
 ### Who is this for?
-This project is for software developers who have interest in an open source implementation of bridge analysis and bidding code.
+This project is for software developers needing an open source implementation of bridge superhuman game analysis and bidding.
 
 ### General Prerequisites
     python

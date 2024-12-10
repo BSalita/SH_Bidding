@@ -5,10 +5,10 @@ This project is for software developers needing an open source implementation of
 
 ### General Prerequisites
     python
-    https://github.com/pola-rs/polars
+    polars
 
 ### Bridge Specific Prerequisites
-    https://github.com/dominicprice/endplay
+    endplay
 
 ### Description of Files
 

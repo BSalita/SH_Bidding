@@ -1,6 +1,6 @@
 ## Creating a Superhuman AI for Contract Bridge
 
-This project aims to develop a foundational AI model capable of analyzing and bidding contract bridge deals at a superhuman level. The AI is rooted in advanced analytics and builds upon BBO's GIB bidding system, striving to enhance strategic decision-making in the complex world of bridge.
+This project aims to develop a foundational AI model capable of analyzing and bidding contract bridge deals at a superhuman level. The AI is rooted in advanced analytics and strives to enhance strategic decision-making in the complex world of bridge. The target of the foundational model is BBO's GIB bidding system
 
 ### Target Audience
 This project is designed for software developers with an interest in artificial intelligence, machine learning, and bridge bidding systems. It has no end-user components.

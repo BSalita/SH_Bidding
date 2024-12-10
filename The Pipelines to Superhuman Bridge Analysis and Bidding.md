@@ -1,5 +1,7 @@
 # The Pipelines to Superhuman Bidding in  Contract Bridge
 
+This document describes the methodology to be used to attain a superhuman level of bridge bidding. The project uses deterministic methods to achieve its goal.
+
 ### **Pipeline 1: Create Training Dataset**
 
 Create a dataset of structured game data suitable for training AI to bid at superhuman level.

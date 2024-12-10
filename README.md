@@ -1,10 +1,10 @@
 ## An implementation of an AI which bids contract bridge deals at a superhuman level
 
 ### What is this project?
-The project's goal is to create an AI model which exceeds human abilities in analytics and bidding. The bidding system used is GIB
+The project's goal is to create an AI foundational model which exceeds human abilities in analytics and bidding. The foundational model is largely based on BBO's GIB bidding system.
 
-### Who is this for?
-This project is for software developers needing an open source implementation of bridge superhuman game analysis and bidding.
+### Who is this project for?
+This project is for software developers. It is not for end user consumption.
 
 ### General Prerequisites
     python

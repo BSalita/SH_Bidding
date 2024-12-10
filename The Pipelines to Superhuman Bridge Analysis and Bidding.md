@@ -6,6 +6,8 @@ An AI bidding at superhuman level has eluded all efforts whether in the open or 
 
 This document describes how a set of well crafted data pipelines can be used to create a superhuman AI which is both deterministic and performant. The development process has established that 99% of the projects work been data engineering and only 1% has been applying AI techniques. The focus of the data engineering work has been directed at creating scalable processes for game data collection, coalesence of data, data cleaning, data augmenting, statistical analysis and storage. The key to scalability has been selecting scalable software such as using polars for data organization, parquet files for storage, vectorization when evaluating billions of bidding criteria.
 
+The rest of this document describes a method whereby five data pipelines can be deployed to achieve superhuman levels.  
+
 ### **Pipeline 1: Create Training Dataset**
 
 Create a dataset of structured game data suitable for training AI to bid at superhuman level.

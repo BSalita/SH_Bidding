@@ -44,7 +44,7 @@ Develop a dataset of structured game data suitable for training AI.
 
 7. **Creating a table of all bids:**
    - Compile a bidding table of all BBO auctions extracted from .lin files. Each entry represents a unique bid in an auction. The table is currently 1.7 million entries and will eventually grow to 2 to 5 million. Entries have the structure: `(index number, tuple(prior bids), tuple(candidate bid), 'textual description', [bidding expressions*])`.
-   - The table exists as both Python and pickled files in various data structures for efficiency.
+   - The table exists in various formats such as a list in a Python file, and in several useful dicts.
 
 ### **Pipeline 2: Creating a Target Dataset**
 

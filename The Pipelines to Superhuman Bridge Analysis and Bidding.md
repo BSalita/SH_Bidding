@@ -1,6 +1,6 @@
 # The Pipelines to Superhuman Analysis and Bidding in Contract Bridge
 
-This document describes a methodology to be used to attain a superhuman level of bidding success. The project uses deterministic methods to achieve its goal. The process can easily be tweeked, measured, optimized, duplicated and explained. This is quite different from using a neural network (NN) model. That said, the project naturally makes its data into a form that's easily consumable for the training of a NN. The author believe that bot deterministic methods and NN models can have a synergistic fushion.
+This document describes a methodology being used to attain a superhuman level of analysis and bidding success in the game of contract bridge. The project uses deterministic methods to achieve its goal. The process can easily be tweeked, measured, optimized, duplicated and explained. This is quite different from using a neural network (NN) model. That said, the project naturally makes its data into a form that's easily consumable for the training of a NN. The author believe that bot deterministic methods and NN models can have a synergistic fushion.
 
 An AI bididng at superhuman level has not been achieved in either open or closed source form. Attempts at using a NN for bidding have not achieved expert level or consistancy. While using deterministic methods has appeared to be intractable. 
 

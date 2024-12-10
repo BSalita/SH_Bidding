@@ -10,7 +10,7 @@ The rest of this document describes five data pipelines which collectively will 
 
 ### **Pipeline 1: Creating the Training Dataset**
 
-Create a dataset of structured game data suitable for training AI to bid at superhuman level.
+Create a dataset of structured game data suitable for training AI.
 
 **Steps:**
 
@@ -23,28 +23,28 @@ Create a dataset of structured game data suitable for training AI to bid at supe
 2. **Reading .lin files, structuring the data, cleaning:**
 
      - Use Endplay to read the .lin files.
-     - Endplay will parse the files into Board objects.
-     - Validate the data
+     - Endplay parses the files into Board objects.
+     - Validate the data.
      - Reject invalid data.
 
-3. **From Board objects to an Endplay-native dataFrame:**
+3. **From Board objects to an Endplay-native dataframe:**
 
     - Coalesce Board objects into an Endplay-native dataframe.
     - All data must be mapped into columns, might require flattening or unnesting operations.
 
 4. **Extracting bidding criteria from bid descriptions:**
 
-    - Lin files contain bid descriptions (announcements) which are a description of the criteria for making the bid (e.g., point ranges, suit distributions). Descriptions exist because the rules of bridge require complete revelation of bidding system to opponents.
+    - Lin files contain bid descriptions (announcements) which are a description of the criteria for making the bid (e.g., point ranges, suit distributions). Descriptions are mandated by bridge rules, which require full disclosure of the bidding system to opponents.
 
     - The descriptions are parsed, cleaned, and transformed into a structured list (strings) of bidding criteria expressions. The expressions should use familiar vernacular. Each expression may be 1 to 3 python-like terms. The list of expressions may be empty or as many as 16 items. For example, 1NT opening bid might have a bidding expression list of 3 items: ['Balanced', 'HCP >= 15', 'HCP <= 17'].
   
-    - Create a dict of bidding expressions to their postfix counterpart. Postfix is simplier when applying bidding expressions to the actual data.
+    - Create a dict of bidding expressions to their postfix counterpart. Postfix is simplier to apply when evaluating bidding expressions against the data.
 
     - Currently there are 55 terms in the bidding vocabulary (e.g. Balanced, HCP, Solid) and 400 bidding expressions (e.g. 'Balanced', 'HCP >= 15', 'SL_H < 5') used by BBO.
 
     - For a bid to be used in an auction, every bidding expression in the list, when applied to the current hand, must evaluate to True. Otherwise the next candidate bid is evaluated. If no bids have all True evaluation results, the default action is to pass.
 
-5. **Transforming the Endplay native dataframe into a project native dataFrame:**
+5. **Transforming the Endplay native dataframe into a project native dataframe:**
 
     - Project native format is dictated by the specific requirements of this project’s analytical tools and methodologies. No matter the source of the game data (ACBL, BBO, French Bridge, etc.), it's first coalesced into a dataframe of the source's native format and then transformed into a dataframe of the project's native format.
 
@@ -56,7 +56,7 @@ Create a dataset of structured game data suitable for training AI to bid at supe
 
 ### **Pipeline 2: Creating a target dataset**
 
-Create a target dataset of structured game data suitable for inference. The dataset will augmented with lots of columns including columns needed to infer bidding auctions. The steps are very similar to Pipleline 1 above.
+Develop a structured target dataset optimized for inference. The dataset will augmented with lots of columns including columns needed to infer bidding auctions. The steps are very similar to Pipleline 1 above.
 
 #### **Steps:**
 
@@ -71,15 +71,15 @@ Create a target dataset of structured game data suitable for inference. The data
 
 ### **Pipeline 3: Creating a dataframe of bidding table results:**
 
-For each entry in the bidding table, apply the entry's bidding expression list to the target dataset (vectorized boolean AND operations). This is for a batch processing use case. Processing a small number of deal needs a different approach. If the target dataset consists of 1 million deals and the bidding table has 2 million entries, the result of this process is a dataframe of 1 million rows by 2 million columns -- all booleans. Performance looks scary but the time required for this process, thanks to polars dataframe efficiency, is 5 minutes.
+For each entry in the bidding table, apply the entry's bidding expression list to the target dataset (vectorized boolean AND operations). This is for a batch processing use case. Processing a small number of deals requires a different approach. If the target dataset consists of 1 million deals and the bidding table has 2 million entries, the result of this process is a dataframe of 1 million rows by 2 million columns -- all booleans. Performance looks scary but the time required for this process, thanks to polars dataframe efficiency, is 5 minutes.
 
 ### **Pipeline 4: Cascading bidding criteria booleans to qualify candidate bids:**
 
-Starting with the opening bid columns (about 30 of the 2 million columns which have no prior bid), recursively apply the column (vectorized boolean AND operations) to the next bids columns. Do so in a way that never repeats computations for an already computed partial bidding sequence. Performance looks scary but the time required for this process, thanks to polars dataframe efficiency, is currently 45 minutes including writing the parquet file. With improved hardware (GPU) and algorithms, this process might be driven down to 20 minutes.
+Starting with the opening bid columns (about 30 of the 2 million columns which have no prior bid), recursively apply the column (vectorized boolean AND operations) to the next bids columns. Do so in a way that never repeats computations for an already computed partial bidding sequence. While the process may seem computationally intensive, polars dataframe efficiency allows it to complete in 45 minutes. With improved hardware (GPU) and algorithms, this process might be driven down to 20 minutes.
 
 ### **Pipeline 5: Instantly finding successful auctions:**
 
-Since we've already computed all 2 million bidding sequences for the entire target dataset, we are well positioned to get all sorts of no cost data analysis. Want to know all possible bidding sequences for a deal? Simply filter all the True values in the deal's dataframe row, a vectorized horizontal operation, to obtain a list of True's column names. Use the list of column names to lookup the bidding table entries. Now you have a list of all possible auctions each guarenteed to meet all bidding criteria.
+Since we've already computed all 2 million bidding sequences for the entire target dataset, we are well positioned to get all sorts of no cost data analysis. Want to know all possible bidding sequences for a deal? Filter all True values in the deal's dataframe row--a vectorized horizontal operation--to retrieve a list of True column names. Use the list of column names to lookup the bidding table entries. Now you have a list of all possible auctions each guarenteed to meet all bidding criteria.
 
 
 

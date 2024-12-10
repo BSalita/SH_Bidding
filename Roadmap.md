@@ -14,14 +14,14 @@ These tools will be essential for ensuring the bidding table's accuracy and comp
 
 2. **Reporting the Coverage of Auctions**
    - Analyze the coverage of different auction scenarios, identifying gaps where default actions (like Pass) may not be appropriate.
-   - Predict missing auctions and suggest new entries for the table.
+   - Predict missing auctions and suggest revised entries for the table.
 
 3. **Reporting Multiple Auction Paths**
-   - Identify and rank multiple possible auction paths for correctness based on expert heuristics or AI-driven predictions.
+   - Identify and rank multiple possible auction paths for correctness based on heuristics or AI-driven predictions.
    - Engage human experts for ambiguous scenarios or automatically disambiguate bids using predefined rules.
 
 4. **Detecting Bogus Auctions**
-   - Identify invalid auction sequences and bids that are impossible to be correct using rule-based validation or simulations.
+   - Identify invalid auction sequences and bids that have unreasonably low expected values as derived from rule-based validation or simulations.
    - Report and correct errors in the bidding table.
 
 ### Community Engagement
@@ -31,9 +31,9 @@ Once the vetting tools are operational, community contributions will play a pivo
    - Integrate approved contributions into the system, ensuring a seamless update process.
 
 ### Timeline and Milestones
-1. **Phase 1**: Develop and test bidding table vetting tools. Target completion: [Insert date].
-2. **Phase 2**: Launch community contribution platform and guidelines. Target completion: [Insert date].
-3. **Phase 3**: Achieve 90% auction coverage with accurate and validated entries. Target completion: [Insert date].
+1. **Phase 1**: Develop and test bidding table vetting tools. Target completion: 1st quarter 2025.
+2. **Phase 2**: Launch community contribution platform and guidelines. Target completion: April 2025.
+3. **Phase 3**: Achieve 90% auction coverage with accurate and validated entries. Target completion: October 2025.
 
 ### Performance Metrics
 To evaluate progress, the following KPIs will be tracked:
@@ -41,5 +41,5 @@ To evaluate progress, the following KPIs will be tracked:
    - Reduction in errors or inconsistencies in the bidding table.
    - Number of community-contributed and validated entries integrated.
 
-By adhering to this roadmap, we aim to create a robust, superhuman-level bidding system that sets a new standard in contract bridge strategy.
+By adhering to this roadmap, we aim to create a robust, superhuman-level bidding system that sets a new standard in contract bridge bidding strategy.
 

@@ -37,7 +37,7 @@ Develop a dataset of structured game data suitable for training AI.
    - Each bidding expression must evaluate to `True` when applied to a hand for the bid to be valid. If no bids evaluate to `True`, the default action is to pass.
 
 5. **Transforming the Endplay-native dataframe into a project-native dataframe:**
-   - Transform data from its source-native format (e.g., ACBL, BBO, French Bridge) into a standardized project-native format dictated by the project’s analytical tools and methodologies.
+   - Transform data from its source-native format (e.g., from ACBL, BBO, French Bridge formats) into a standardized project-native format dictated by the project’s analytical tools and methodologies.
 
 6. **Cleaning and augmenting data:**
    - Augment the data with over 1,000 columns derived from a deal (e.g., hands, suit lengths, HCP, individual cards). This includes creating columns for every bidding expression (e.g., `Balanced`, `HCP`, `SL_[CDHS]`, `Solid_[CDHS]`, `Rebiddable_[CDHSN]`).

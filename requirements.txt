@@ -1,0 +1,20 @@
+# core
+pandas
+polars
+duckdb
+requests
+urllib3
+python-dotenv
+endplay
+pathlib
+matplotlib
+IPython
+
+# optional
+streamlit
+streamlit-extras
+streamlit-chat
+streamlit-aggrid
+stqdm
+numpy
+

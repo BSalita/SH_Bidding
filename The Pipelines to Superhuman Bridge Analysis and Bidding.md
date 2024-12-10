@@ -8,7 +8,7 @@ This document describes how a set of well crafted data pipelines can be used to 
 
 The rest of this document describes five data pipelines which collectively will result in superhuman analysis and bidding in the game of contract bridge.  
 
-### **Pipeline 1: Create Training Dataset**
+### **Pipeline 1: Creating the Training Dataset**
 
 Create a dataset of structured game data suitable for training AI to bid at superhuman level.
 

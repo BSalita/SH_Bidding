@@ -26,7 +26,11 @@ File requirements.txt contains project's prerequisites. It's used to install pyt
 
 ### References
 https://www.bridgebase.com/doc/gib_system_notes.php
+
 https://www.bridgebase.com/doc/gib_descriptions.php
+
 https://github.com/lorserker/ben
+
 https://www.ijcai.org/Proceedings/99-1/Papers/084.pdf
+
 

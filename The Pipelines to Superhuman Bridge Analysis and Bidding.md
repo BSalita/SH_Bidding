@@ -1,4 +1,4 @@
-# Pipelines to Achieve Superhuman Abilities in Contract Bridge
+# Pipelines Enable Superhuman Abilities in Contract Bridge
 
 This document describes a methodology being used to attain a superhuman level of analysis and bidding success in the game of contract bridge. The project relies on deterministic methods to accomplish its objectives. The process can easily be tweaked, measured, optimized, replicated, and explained. This approach contrasts sharply with using a neural network (NN) model. That said, the project naturally organizes its data into a form that is easily consumable for training a NN. The author believes that both deterministic methods and NN models can achieve a synergistic fusion.
 

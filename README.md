@@ -12,7 +12,7 @@ This project is for software developers needing an open source implementation of
 
 ### Description of Files
 
-The Pipelines to Superhuman Bridge.md is a description of the methodology used to bid bridge hands.
+The Pipelines to Superhuman Bridge Analysis and Bidding.md is a description of the methodology used to bid bridge hands.
 
 File bbo_bidding_expressions.txt contains a list of bidding expressions used to evaluate hands.
 

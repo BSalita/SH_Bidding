@@ -1,85 +1,77 @@
-# The Pipelines for Achieving Superhuman Abilities in Contract Bridge
+# Pipelines to Achieve Superhuman Abilities in Contract Bridge
 
-This document describes a methodology being used to attain a superhuman level of analysis and bidding success in the game of contract bridge. The project relies on deterministic methods to achieve its goal. The process can easily be tweeked, measured, optimized, duplicated and explained. This approach contrasts sharply with using a neural network (NN) model. That said, the project naturally makes its data into a form that's easily consumable for the training of a NN. The author believes that both deterministic methods and NN models can have a synergistic fusion.
+This document describes a methodology being used to attain a superhuman level of analysis and bidding success in the game of contract bridge. The project relies on deterministic methods to accomplish its objectives. The process can easily be tweaked, measured, optimized, replicated, and explained. This approach contrasts sharply with using a neural network (NN) model. That said, the project naturally organizes its data into a form that is easily consumable for training a NN. The author believes that both deterministic methods and NN models can achieve a synergistic fusion.
 
-An AI bidding at superhuman level has eluded all efforts whether in the open or closed source form. Attempts at using NN models for bidding have not achieved expert-level performance or acceptable consistency. While approaches using deterministic processes have never achieved completion and have appeared intractable. 
+An AI bidding at a superhuman level has eluded all efforts, whether in open or closed-source forms. Attempts at using NN models for bidding have not achieved expert-level performance or acceptable consistency. Approaches using deterministic processes, meanwhile, have never reached completion and have appeared intractable.
 
-This document describes how a set of well crafted data pipelines can be used to create a superhuman AI which is both deterministic and performant. The development process has established that 99% of the project's work has been in data engineering and only 1% has been applying AI techniques. The focus of the data engineering work has been directed at creating scalable processes for game data collection, coalescence of data, data cleaning, data augmenting, statistical analysis and storage. The key to scalability has been selecting scalable software such as using polars for data organization, parquet files for storage, vectorization techniques to evaluate billions of bidding criteria.
+This document describes how a set of well-crafted data pipelines can create a superhuman AI that is both deterministic and performant. The development process has established that 99% of the project's work has been in data engineering and only 1% in applying AI techniques. The focus of the data engineering work has been directed at creating scalable processes for game data collection, coalescence of data, data cleaning, data augmentation, statistical analysis, and storage. The key to scalability has been selecting appropriate software, such as Polars for data organization, Parquet files for storage, and vectorization techniques to evaluate billions of bidding criteria.
 
-The rest of this document describes five data pipelines which collectively will result in superhuman analysis and bidding in the game of contract bridge.  
+The rest of this document describes five data pipelines that collectively enable superhuman analysis and bidding in the game of contract bridge.
 
 ### **Pipeline 1: Creating the Training Dataset**
 
-Create a dataset of structured game data suitable for training AI.
+Develop a dataset of structured game data suitable for training AI.
 
 **Steps:**
 
 1. **Downloading .lin files from BBO (Bridge Base Online):**
-
-     - Retrieve game data from BBO.
-     - The AI training process favors lots of data.
-     - Downloads are in .lin file format, which contains records of deals, auction, bid's descriptions, card play and results.
+   - Retrieve game data from BBO.
+   - The AI training process benefits from a large volume of data.
+   - Downloads are in .lin file format, containing records of deals, auctions, bid descriptions, card play, and results.
 
 2. **Reading .lin files, structuring the data, cleaning:**
-
-     - Use Endplay to read the .lin files.
-     - Endplay parses the files into Board objects.
-     - Validate the data.
-     - Reject invalid data.
+   - Use Endplay to read the .lin files.
+   - Endplay parses the files into Board objects.
+   - Validate the data and reject invalid entries.
 
 3. **From Board objects to an Endplay-native dataframe:**
-
-    - Coalesce Board objects into an Endplay-native dataframe.
-    - All data must be mapped into columns, might require flattening or unnesting operations.
+   - Coalesce Board objects into an Endplay-native dataframe.
+   - Map all data into columns, which may require flattening or unnesting operations.
 
 4. **Extracting bidding criteria from bid descriptions:**
+   - Lin files include bid descriptions (announcements), detailing the criteria for each bid. These descriptions are mandated by bridge rules, which require full disclosure of the bidding system to opponents.
+   - Parse, clean, and transform descriptions into structured lists of bidding criteria expressions. These expressions should use familiar vernacular, typically comprising 1 to 3 Python-like terms. For example, a 1NT opening bid might have a bidding expression list of: `['Balanced', 'HCP >= 15', 'HCP <= 17']`.
+   - Create a dictionary of bidding expressions and their postfix equivalents for efficient evaluation.
+   - Currently, there are 55 terms in the bidding vocabulary (e.g., Balanced, HCP, Solid) and 400 bidding expressions (e.g., `Balanced`, `HCP >= 15`, `SL_H < 5`) used by BBO.
+   - Each bidding expression must evaluate to `True` when applied to a hand for the bid to be valid. If no bids evaluate to `True`, the default action is to pass.
 
-    - Lin files contain bid descriptions (announcements) which are a description of the criteria for making the bid (e.g., point ranges, suit distributions). Descriptions are mandated by bridge rules, which require full disclosure of the bidding system to opponents.
-
-    - The descriptions are parsed, cleaned, and transformed into a structured list (strings) of bidding criteria expressions. The expressions should use familiar vernacular. Each expression may be 1 to 3 python-like terms. The list of expressions may be empty or as many as 16 items. For example, 1NT opening bid might have a bidding expression list of 3 items: ['Balanced', 'HCP >= 15', 'HCP <= 17'].
-  
-    - Create a dict of bidding expressions to their postfix counterpart. Postfix is simplier to apply when evaluating bidding expressions against the data.
-
-    - Currently there are 55 terms in the bidding vocabulary (e.g. Balanced, HCP, Solid) and 400 bidding expressions (e.g. 'Balanced', 'HCP >= 15', 'SL_H < 5') used by BBO.
-
-    - For a bid to be used in an auction, every bidding expression in the list, when applied to the current hand, must evaluate to True. Otherwise the next candidate bid is evaluated. If no bids have all True evaluation results, the default action is to pass.
-
-5. **Transforming the Endplay native dataframe into a project native dataframe:**
-
-    - Project native format is dictated by the specific requirements of this project’s analytical tools and methodologies. No matter the source of the game data (ACBL, BBO, French Bridge, etc.), it's first coalesced into a dataframe of the source's native format and then transformed into a dataframe of the project's native format.
+5. **Transforming the Endplay-native dataframe into a project-native dataframe:**
+   - Transform data from its source-native format (e.g., ACBL, BBO, French Bridge) into a standardized project-native format dictated by the project’s analytical tools and methodologies.
 
 6. **Cleaning and augmenting data:**
-    - There are over 1000 columns which can be augmented from a deal (e.g. Hands, suit lengths, HCP, individual cards, etc.). Augmenting includes creating columns for every bidding expression (e.g. Balanced, HCP, SL\_[CDHS], Solid\_[CDHS], Rebiddable\_[CDHSN].
+   - Augment the data with over 1,000 columns derived from a deal (e.g., hands, suit lengths, HCP, individual cards). This includes creating columns for every bidding expression (e.g., `Balanced`, `HCP`, `SL_[CDHS]`, `Solid_[CDHS]`, `Rebiddable_[CDHSN]`).
 
 7. **Creating a bidding table:**
-    - Create a bidding table of all BBO auctions extracted from .lin files. The table has a unique entry for every bid of every auction. The table is currently 1.7 million entries but, when complete, will have 2 to 5 million entries. Entries have a structure of tuple(index number, tuple(prior bids), tuple(candidate bid,), 'textual description', ['bidding expression'*]. There may be zero or more bidding expressions. The bidding table exists as both a python file and pickled files in various helpful data structures.
+   - Compile a bidding table of all BBO auctions extracted from .lin files. Each entry represents a unique bid in an auction. The table is currently 1.7 million entries and will eventually grow to 2 to 5 million. Entries have the structure: `(index number, tuple(prior bids), tuple(candidate bid), 'textual description', [bidding expressions*])`.
+   - The table exists as both Python and pickled files in various data structures for efficiency.
 
-### **Pipeline 2: Creating a target dataset**
+### **Pipeline 2: Creating a Target Dataset**
 
-Develop a structured target dataset optimized for inference. The dataset will augmented with lots of columns including columns needed to infer bidding auctions. The steps are very similar to Pipleline 1 above.
+Develop a structured target dataset optimized for inference. This dataset is augmented with numerous columns, including those needed to infer bidding auctions. The steps are similar to Pipeline 1.
 
-#### **Steps:**
+**Steps:**
 
 1. **Download game data:**
-    - Good sources of plentiful and robust data include ACBL, BBO, ffbridge, or PBN files. A benefit of using BBO data is that its auction serves as ground-truthish for inferred auctions.
+   - Reliable sources include ACBL, BBO, ffbridge, or PBN files. BBO data is particularly useful as its auctions serve as a near ground-truth reference.
+
 2. **Download to source-native dataframe:**
-    - Read the downloaded data, clean, coalesce into a source-native dataframe. Endplay can be used to read .lin, .pbn files. Minimum necessary columns are ['Deal'] but board results columns make for more interesting analysis.
+   - Read, clean, and coalesce the data into a source-native dataframe. Endplay can read .lin and .pbn files. At a minimum, the dataframe should include a `Deal` column, with additional board results columns for richer analysis.
+
 3. **Transform to project-native dataframe:**
-    - Transform the source-native dataframe into project-native dataframe.
+   - Convert the source-native dataframe into the project-native format.
+
 4. **Clean and augment:**
-    - Clean and augment the data. There are over 1000 columns which can be augmented from a deal (e.g. Hands, suit lengths, HCP, individual cards, etc.). Augmenting includes creating columns for every bidding expression as described in previous section.
+   - Augment the data as described in Pipeline 1.
 
-### **Pipeline 3: Creating a dataframe of bidding table results:**
+### **Pipeline 3: Creating a Dataframe of Bidding Table Results**
 
-For each entry in the bidding table, apply the entry's bidding expression list to the target dataset (vectorized boolean AND operations). This is for a batch processing use case. Processing a small number of deals requires a different approach. If the target dataset consists of 1 million deals and the bidding table has 2 million entries, the result of this process is a dataframe of 1 million rows by 2 million columns -- all booleans. Performance looks scary but the time required for this process, thanks to polars dataframe efficiency, is 5 minutes.
+For each entry in the bidding table, apply the bidding expressions to the target dataset using vectorized Boolean operations. For a target dataset with 1 million deals and a bidding table of 2 million entries, this results in a dataframe of 1 million rows by 2 million columns (all Booleans). Despite the scale, Polars’ efficiency allows this process to complete in just 5 minutes.
 
-### **Pipeline 4: Cascading bidding criteria booleans to qualify candidate bids:**
+### **Pipeline 4: Cascading Bidding Criteria Booleans to Qualify Candidate Bids**
 
-Starting with the opening bid columns (about 30 of the 2 million columns which have no prior bid), recursively apply the column (vectorized boolean AND operations) to the next bids columns. Do so in a way that never repeats computations for an already computed partial bidding sequence. While the process may seem computationally intensive, polars dataframe efficiency allows it to complete in 45 minutes. With improved hardware (GPU) and algorithms, this process might be driven down to 20 minutes.
+Starting with the opening bid columns (approximately 30 out of 2 million columns without prior bids), recursively apply vectorized Boolean operations to subsequent bid columns. Avoid redundant computations for already processed partial bidding sequences. While computationally intensive, this process completes in 45 minutes with Polars. Improved hardware (e.g., GPUs) and algorithms could reduce this to 20 minutes.
 
-### **Pipeline 5: Instantly finding successful auctions:**
+### **Pipeline 5: Instantly Finding Successful Auctions**
 
-Since we've already computed all 2 million bidding sequences for the entire target dataset, we are well positioned to get all sorts of no cost data analysis. Want to know all possible bidding sequences for a deal? Filter all True values in the deal's dataframe row--a vectorized horizontal operation--to retrieve a list of True column names. Use the list of column names to lookup the bidding table entries. Now you have a list of all possible auctions each guarenteed to meet all bidding criteria.
-
-
+Since all 2 million bidding sequences for the target dataset are precomputed, querying for possible bidding sequences is instantaneous. Filter the `True` values in a deal’s dataframe row (a vectorized horizontal operation) to extract corresponding column names. Use these column names to look up bidding table entries, yielding a list of all possible auctions guaranteed to meet the bidding criteria.
 

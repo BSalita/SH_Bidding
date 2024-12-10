@@ -1,36 +1,30 @@
-## An implementation of an AI which bids contract bridge deals at a superhuman level
+## Creating a Superhuman AI for Contract Bridge
 
-### What is this project?
-The project's goal is to create an AI foundational model which exceeds human abilities in analytics and bidding. The foundational model is largely based on BBO's GIB bidding system.
+This project aims to develop a foundational AI model capable of analyzing and bidding contract bridge deals at a superhuman level. The AI is rooted in advanced analytics and builds upon BBO's GIB bidding system, striving to enhance strategic decision-making in the complex world of bridge.
 
-### Who is this project for?
-This project is for software developers. It is not for end user consumption.
+### Target Audience
+This project is designed for software developers with an interest in artificial intelligence, machine learning, and bridge bidding systems. It is not intended for end-user application.
 
-### General Prerequisites
-    python
-    polars
+### Prerequisites
+#### General Prerequisites
+- Python 3.8 or later
+- Polars: A fast DataFrame library for data processing.
 
-### Bridge Specific Prerequisites
-    endplay
+#### Bridge-Specific Prerequisites
+- Endplay: A Python library for analyzing bridge hands.
 
 ### Description of Files
-
-The Pipelines to Superhuman Bridge Analysis and Bidding.md describes the methodology used to bid bridge hands.
-
-File bbo_bidding_vocabulary.txt contains a list of bridge terms used to evaluate hands. e.g. Rebiddable, HCP, Solid.
-
-File bbo_bidding_expressions.txt contains a list of expressions used to evaluate bidding criteria. e.g. Rebiddable_C, HCP >= 15, HCP <= 17, Solid_C.
-
-File requirements.txt contains project's prerequisites. It's used to install python packages into the development environment.
-    pip install -U -r requirements.txt
+- `Pipelines to Superhuman Bridge Analysis and Bidding.md`: Describes the methodology for analyzing and bidding bridge hands.
+- `bbo_bidding_vocabulary.txt`: Contains a glossary of bridge-related terms (e.g., "Rebiddable," "HCP," "Solid").
+- `bbo_bidding_expressions.txt`: Lists expressions used to evaluate bidding criteria (e.g., "Rebiddable_C," "HCP >= 15").
+- `requirements.txt`: Specifies project dependencies. Use the following command to install them:
+  ```
+  pip install -U -r requirements.txt
+  ```
 
 ### References
-https://www.bridgebase.com/doc/gib_system_notes.php
-
-https://www.bridgebase.com/doc/gib_descriptions.php
-
-https://github.com/lorserker/ben
-
-https://www.ijcai.org/Proceedings/99-1/Papers/084.pdf
-
+- [GIB System Notes](https://www.bridgebase.com/doc/gib_system_notes.php): Documentation for BBO's GIB system.
+- [GIB Descriptions](https://www.bridgebase.com/doc/gib_descriptions.php): Additional details on GIB bidding logic.
+- [Ben GitHub Repository](https://github.com/lorserker/ben): A related open-source project for bridge analysis.
+- [IJCAI Paper on AI and Bridge](https://www.ijcai.org/Proceedings/99-1/Papers/084.pdf): Academic research on AI strategies for bridge.
 

@@ -42,7 +42,7 @@ Develop a dataset of structured game data suitable for training AI.
 6. **Cleaning and augmenting data:**
    - Augment the data with over 1,000 columns derived from a deal (e.g., hands, suit lengths, HCP, individual cards). This includes creating columns for every bidding expression (e.g., `Balanced`, `HCP`, `SL_[CDHS]`, `Solid_[CDHS]`, `Rebiddable_[CDHSN]`).
 
-7. **Creating a bidding table:**
+7. **Creating a table of all bids:**
    - Compile a bidding table of all BBO auctions extracted from .lin files. Each entry represents a unique bid in an auction. The table is currently 1.7 million entries and will eventually grow to 2 to 5 million. Entries have the structure: `(index number, tuple(prior bids), tuple(candidate bid), 'textual description', [bidding expressions*])`.
    - The table exists as both Python and pickled files in various data structures for efficiency.
 

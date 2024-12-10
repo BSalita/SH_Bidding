@@ -1,6 +1,10 @@
-# The Pipelines to Superhuman Bidding in  Contract Bridge
+# The Pipelines to Superhuman Analysis and Bidding in Contract Bridge
 
-This document describes the methodology to be used to attain a superhuman level of bridge bidding. The project uses deterministic methods to achieve its goal.
+This document describes a methodology to be used to attain a superhuman level of bidding success. The project uses deterministic methods to achieve its goal. The process can easily be tweeked, measured, optimized, duplicated and explained. This is quite different from using a neural network (NN) model. That said, the project naturally makes its data into a form that's easily consumable for the training of a NN. The author believe that bot deterministic methods and NN models can have a synergistic fushion.
+
+An AI bididng at superhuman level has not been achieved in either open or closed source form. Attempts at using a NN for bidding have not achieved expert level or consistancy. While using deterministic methods has appeared to be intractable. 
+
+This document describes how a set of well crafted data pipelines can be used to create a superhuman AI which is both deterministic and performant. The development process has established that 99% of the projects work been data engineering and only 1% has been applying AI techniques. The focus of the data engineering work has been directed at creating scalable processes for game data collection, coalesence of data, data cleaning, data augmenting, statistical analysis and storage. The key to scalability has been selecting scalable software such as using polars for data organization, parquet files for storage, vectorization when evaluating billions of bidding criteria.
 
 ### **Pipeline 1: Create Training Dataset**
 

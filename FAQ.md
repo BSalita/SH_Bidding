@@ -12,7 +12,7 @@ The Superhuman Bridge Bidding project aims to develop an AI system capable of ou
 This project is significant because it pushes the boundaries of artificial intelligence in games of incomplete information, showcasing advancements in strategic decision-making, pattern recognition, and reasoning under uncertainty.
 
 ### In what ways does it advance SOTA (State of the Art)?
-The project advances SOTA by introducing novel deterministic methodologies tailored to bridge bidding. It emphasizes transparency, interpretability, and strategic depth compared to existing AI systems.
+The project advances SOTA by introducing novel deterministic methodologies tailored to bridge bidding. It emphasizes scalability, transparency, interpretability, and strategic depth compared to existing AI systems.
 
 ### What are the novel contributions?
 - Open source foundational model of a bidding system (GIB).
@@ -32,7 +32,7 @@ Previous efforts include:
 ## Technical Approach
 
 ### What is the general approach?
-The project uses data driven deterministic algorithms to determine the most effective bids.
+The project uses data driven deterministic algorithms to select the most effective bids.
 - Employ scalable techniques to efficiently take full advantage of abundant data.
 - Rule-based logic and statistical methods to select best bidding candidates.
 - A framework for implementation of additional bidding systems beyond the foundational model (GIB).
@@ -66,22 +66,22 @@ Yes. The roadmap includes:
 5. Public release and community engagement.
 
 ### What is the current status?
-The project is in the final phase which is making the bidding table complete and accurate.
+The project is in the final development phase focusing on making the bidding table complete and accurate.
 
 ## Open Source and Collaboration
 
 ### Where is the source code?
-The source code will be posted as the different components near completion, estimating April 2025.
+The source code will be posted from now continuing through end of April 2025.
 
 ### Is it open source?
 Yes, the project will be open-source (MIT license) for the community of developers and game researchers.
 
 ### Is the data open source?
-Yes, datasets curated for the project will be made available.
+Yes, datasets curated for the project will be made available for download.
 
 ### What is needed to complete the project?
 - Completion and vetting of the bidding table.
-- Additional data for training and testing.
+- Additional data for ever-improving data integrity and testing.
 - Collaboration with bridge experts.
 - Community contributions for further testing and validation.
 
@@ -95,7 +95,7 @@ You can contribute by:
 ## Technical Details
 
 ### What are the hardware requirements for the project?
-To replicate the entire pipeline requires a beefy computer system preferably with 512GB of RAM and 2TB of fast storage. Possibly a more modest system can be used, one having less 64GB of memory, if the CPU and disk I/O is very fast and the developer can wait a week to replicate results. The actual system used for development is a Dell R630 system with dual Intel Xeons (12 cores), 1.5TB of RAM (sic) and dual 2TB SATA SSDs in RAID 0. While this may appear to be a daunting piece of hardware, it's less than the price of a high-end GPU and easily obtainable on eBay. No GPU is needed in the current phase of the project.
+To replicate the entire pipeline requires a beefy computer system preferably with 512GB of RAM (sic) and 2TB of fast storage. Possibly a more modest system can be used, one having 64GB of RAM, if the CPU and disk I/O are able to compensate for the reduced RAM size. The actual system used for development is a Dell R630 system with dual Intel Xeons (total of 12 cores), 1.5TB of RAM (sic) and dual 2TB SATA SSDs in RAID 0. While this may appear to be a daunting piece of hardware, it's less than the price of a high-end GPU and easily obtainable on eBay. No GPU is needed in the current phase of the project.
 
 ### What is the bidding table?
 A structured representation of all known auction sequences broken down by individual bids and their criteria.

@@ -1,5 +1,8 @@
 # Frequently Asked Questions (FAQ)
 
+## Introduction
+The Superhuman Bridge Bidding project is an ambitious initiative to develop an AI system capable of outperforming human players in the bidding phase of bridge. This FAQ provides insights into the project’s goals, methodologies, and progress while inviting collaboration from the community.
+
 ## General Questions
 
 ### What is this project?
@@ -9,7 +12,7 @@ The Superhuman Bridge Bidding project aims to develop an AI system capable of ou
 This project is significant because it pushes the boundaries of artificial intelligence in games of incomplete information, showcasing advancements in strategic decision-making, pattern recognition, and reasoning under uncertainty.
 
 ### In what ways does it advance SOTA (State of the Art)?
-The project advances SOTA by introducing novel deterministic methodologies and improved neural network models tailored to bridge bidding. It emphasizes transparency, interpretability, and strategic depth compared to existing AI systems.
+The project advances SOTA by introducing novel deterministic methodologies tailored to bridge bidding. It emphasizes transparency, interpretability, and strategic depth compared to existing AI systems.
 
 ### What are the novel contributions?
 - Open source foundational model of a bidding system (GIB).

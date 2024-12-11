@@ -12,6 +12,7 @@ This project is significant because it pushes the boundaries of artificial intel
 The project advances SOTA by introducing novel deterministic methodologies and improved neural network models tailored to bridge bidding. It emphasizes transparency, interpretability, and strategic depth compared to existing AI systems.
 
 ### What are the novel contributions?
+- Open source foundational model of a bidding system (GIB).
 - Reducing the seemingly intractable problem of exceeding human expert level bidding into a manageable form.
 - Development of a complete deterministic bidding system.
 - Integration of rule-based logic for enhanced decision-making.
@@ -43,12 +44,12 @@ Deterministic systems are:
 Neural networks excel in:
 - Handling large datasets and complex patterns.
 - Adapting to new scenarios through training.
-- Learning subtleties and nuances in bidding that may not be captured by deterministic rules.
+- Learning subtleties and nuances which may not be captured by deterministic rules.
 
 ### Why is a deterministic approach better?
 A deterministic approach is better for:
 - Ensuring predictable outcomes.
-- Building trust through explainability.
+- Building explainable systems.
 - Codifying expert knowledge directly into the system.
 
 ## Project Roadmap
@@ -56,69 +57,65 @@ A deterministic approach is better for:
 ### Do you have a roadmap?
 Yes. The roadmap includes:
 1. Research and data collection.
-2. Development of deterministic and neural network components.
-3. Testing and validation against human experts.
+2. Development of deterministic methods.
+3. Testing and validation against real-world results.
 4. Iterative improvement based on feedback.
 5. Public release and community engagement.
 
-### What are the prerequisites?
-- Knowledge of bridge rules and strategies.
-- Understanding of AI and machine learning principles.
-- Access to computing resources for development and testing.
-
 ### What is the current status?
-The project is currently in the development phase, focusing on building and testing the core algorithms.
+The project is in the final phase which is making the bidding table complete and accurate.
 
 ## Open Source and Collaboration
 
 ### Where is the source code?
-The source code will be hosted on a public repository (e.g., GitHub). The exact URL will be shared upon completion of the core components.
+The source code will be posted as the different components near completion, estimating April 2025.
 
 ### Is it open source?
-Yes, the project will be open-source to encourage collaboration and transparency.
+Yes, the project will be open-source (MIT license) for the community of developers and game researchers.
 
 ### Is the data open source?
-Yes, datasets curated for the project will be made available under an appropriate open-source license.
+Yes, datasets curated for the project will be made available.
 
 ### What is needed to complete the project?
+- Completion and vetting of the bidding table.
 - Additional data for training and testing.
 - Collaboration with bridge experts.
 - Community contributions for further testing and validation.
 
 ### How can I contribute?
 You can contribute by:
+- Contributing to code development and documentation.
 - Providing bridge-related datasets.
 - Offering expertise in bridge strategies.
 - Testing the system and providing feedback.
-- Contributing to code development and documentation.
 
 ## Technical Details
 
 ### What are the hardware requirements for the project?
-- A modern computer with GPU support for neural network training.
-- Sufficient RAM and storage for handling datasets and computations.
+To replicate the entire pipeline requires a beefy computer system preferably with 512GB of RAM and 2TB of fast storage. Possibly a more modest system can be used, one having less 64GB of memory, if the CPU and disk I/O is very fast and the developer can wait a week to replicate results. The actual system used for development is a Dell R630 system with dual Intel Xeons (12 cores), 1.5TB of RAM (sic) and dual 2TB SATA SSDs in RAID 0. While this may appear to be a daunting piece of hardware, it's less than the price of a high-end GPU and easily obtainable on eBay. No GPU is needed in the current phase of the project.
 
 ### What is the bidding table?
-A structured representation of possible bids and their meanings in the context of bridge strategies.
+A structured representation of all known auction sequences broken down by individual bids and their criteria.
 
 ### What is a bidding expression list?
-A list of predefined expressions used to encode and interpret bidding actions.
+A list of predefined expressions, datatype string, used to encode and interpret bidding actions e.g. 1NT is `['Balanced', 'HCP >= 15', 'HCP <= 17']`.
 
 ### What is a bidding vocabulary list?
-A comprehensive list of terms, conventions, and signals used in bridge bidding.
+A comprehensive list of terms, datatype string, commonly used in bridge bidding. e.g. Balanced, HCP, Rebiddable_C.
 
 ## Superhuman Performance
 
 ### In what way is the project superhuman now?
 The system demonstrates:
 - Superior consistency compared to human players.
-- Ability to analyze vast datasets beyond human capacity.
+- Ability to leverage information in vast datasets beyond human capacity.
+- Employ sophisticated statistical methods to select efficient bids.
 - Enhanced strategic reasoning in complex bidding scenarios.
 
 ### Why do you think the project will result in a superhuman AI?
-By combining the strengths of deterministic logic and neural networks, the system is expected to:
-- Exploit subtle patterns and strategies overlooked by humans.
-- Continuously improve through reinforcement learning.
+By combining the strengths of deterministic logic and statistical methods, the system is expected to:
+- Exploit subtle patterns and strategies unattainable by humans.
+- Continuously improve through feedback.
 - Offer unparalleled consistency and accuracy.
 
 ### Can an AI really bid better than a human?

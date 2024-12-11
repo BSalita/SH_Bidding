@@ -12,9 +12,11 @@ This project is significant because it pushes the boundaries of artificial intel
 The project advances SOTA by introducing novel deterministic methodologies and improved neural network models tailored to bridge bidding. It emphasizes transparency, interpretability, and strategic depth compared to existing AI systems.
 
 ### What are the novel contributions?
-- Development of a deterministic bidding system.
-- Integration of rule-based logic with AI models for enhanced decision-making.
+- Reducing the seemingly intractable problem of exceeding human expert level bidding into a manageable form.
+- Development of a complete deterministic bidding system.
+- Integration of rule-based logic for enhanced decision-making.
 - Creation of a comprehensive dataset specific to bridge bidding strategies.
+- Creation of tools to vet bidding strategies for effectiveness, coverage, and disambiguation.
 - Introduction of explainable AI techniques for better interpretability of decisions.
 
 ### What is the prior art?
@@ -33,8 +35,8 @@ The project uses data driven deterministic algorithms to determine the most effe
 
 ### How is the approach better than a neural net (NN)?
 Deterministic systems are:
-- Transparent, offering clear reasoning for each decision.
-- Efficient, as they do not require extensive training data.
+- Transparent and explainable, offering clear reasoning for each decision.
+- Effective and precise selection of bids.
 - Consistent, reducing variability in performance.
 
 ### In what way is a NN better?

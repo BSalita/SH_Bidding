@@ -19,17 +19,17 @@ The project advances SOTA by introducing novel deterministic methodologies and i
 
 ### What is the prior art?
 Previous efforts include:
-- Traditional neural network approaches for card games.
+- Traditional neural network approaches for bridge bidding.
 - Rule-based systems designed by human bridge experts.
 - Research on AI in games like chess, poker, and Go, which have influenced this domain.
 
 ## Technical Approach
 
 ### What is the general approach?
-The project combines deterministic algorithms with neural networks to create a hybrid system. It leverages:
-- Rule-based logic for foundational bidding principles.
-- Neural networks for complex pattern recognition.
-- Reinforcement learning to optimize performance over time.
+The project uses data driven deterministic algorithms to determine the most effective bids.
+- Employ scalable techniques to efficiently take full advantage of abundant data.
+- Rule-based logic and statistical methods to select best bidding candidates.
+- A framework for implementation of additional bidding systems beyond the foundational model (GIB).
 
 ### How is the approach better than a neural net (NN)?
 Deterministic systems are:

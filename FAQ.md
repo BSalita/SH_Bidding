@@ -148,19 +148,14 @@ Yes, AI can outperform humans by:
 ### Are there examples of AI outperforming humans in other games?
 
 **Chess (Deep Blue vs. Garry Kasparov, 1997)**  
-- [IBM’s Official Deep Blue Pages](https://www.ibm.com/ibm/history/exhibits/deepblue/deepblue_index.html)  
 - [New York Times: Machine Defeats Kasparov](https://www.nytimes.com/1997/05/11/nyregion/deep-blue-wins-rematch-with-kasparov.html)
 
 **Go (AlphaGo vs. Lee Sedol, 2016)**  
 - [Nature: AlphaGo Mastering the Game of Go](https://www.nature.com/articles/nature16961)  
 - [DeepMind’s Official Case Study on AlphaGo](https://deepmind.com/research/case-studies/alphago-the-story-so-far)
 
-**Shogi (AlphaZero and other AI Programs)**  
-- [DeepMind Blog: AlphaZero’s Progress in Chess, Shogi, and Go](https://deepmind.com/blog/article/alphazero-shedding-new-light-grand-games-chess-shogi-and-go)
-
 **Poker (Libratus & Pluribus vs. Professionals)**  
 - [Science Magazine: Superhuman AI for Multiplayer Poker](https://www.science.org/doi/10.1126/science.aay2400)  
-- [Carnegie Mellon University: Libratus Beats Poker Pros](https://www.cmu.edu/news/stories/archives/2017/january/ai-beats-poker-pros.html)
 
 **Bridge (AI Progress in Card Play and Bidding)**  
 - [Bloomberg: Bridge AI and the Quest for Mastery](https://www.bloomberg.com/news/articles/2019-07-26/bridge-ai-follows-deepmind-s-lead-to-master-a-longheld-human-edge) *(may require subscription)*

@@ -124,6 +124,9 @@ A list of predefined expressions, datatype string, used to encode and interpret 
 ### What is a bidding vocabulary list?
 A comprehensive list of terms, datatype string, commonly used in bridge bidding. e.g. Balanced, HCP, Rebiddable_C.
 
+### What is the purpose of the SQL interface?
+SQL is a standards based method of quering data. We use it to query data held in dataframes. SQL provides the ability to select, filter, join and create new augmentations (features).
+
 ## Superhuman Performance
 
 ### In what way is the project superhuman now?

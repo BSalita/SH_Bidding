@@ -29,6 +29,15 @@ Previous efforts include:
 - Rule-based systems designed by human bridge experts.
 - Research on AI in games like chess, poker, and Go, which have influenced this domain.
 
+### Give examples of questions which the project will answer:
+- What is the bidding criteria for each bid in the auction?
+- Show a probability distribution of next bids. Rank by highest probability to lowest.
+- What is the likely par score or expected value? Predict as each bid is made.
+- Who holds the key cards? Predict key cards in each hand as each bid is made.
+- Which key cards must partner hold to ensure a highest expected value score? Show as each bid is made.
+- What is the probability and expected value for opponents bids? Show expected value of pass, bid, double, or redouble.
+- What are the probabilities and expected values in terms of match points or IMPs (International Match Points)?
+
 ## Technical Approach
 
 ### What is the general approach?

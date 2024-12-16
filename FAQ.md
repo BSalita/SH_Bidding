@@ -12,9 +12,10 @@ The Superhuman Bridge Bidding project aims to develop an AI system capable of ou
 This project is significant because it pushes the boundaries of artificial intelligence in games of incomplete information, showcasing advancements in strategic decision-making, pattern recognition, and reasoning under uncertainty.
 
 ### In what ways does it advance SOTA (State of the Art)?
-The project advances SOTA by introducing novel deterministic methodologies tailored to bridge bidding. It emphasizes scalability, transparency, interpretability, and strategic depth compared to existing AI systems.
+The project advances SOTA by introducing novel deterministic methodologies tailored to bridge bidding. It emphasizes scalability, transparency, interpretability, and strategic depth compared to prior art.
 
 ### What are the novel contributions?
+- Methods of scaling huge amounts of bridge data.
 - Open source foundational model of a bidding system (GIB).
 - Reducing the seemingly intractable problem of exceeding human expert level bidding into a manageable form.
 - Development of a complete deterministic bidding system.
@@ -22,6 +23,7 @@ The project advances SOTA by introducing novel deterministic methodologies tailo
 - Creation of a comprehensive dataset specific to bridge bidding strategies.
 - Creation of tools to vet bidding strategies for effectiveness, coverage, and disambiguation.
 - Introduction of explainable AI techniques for better interpretability of decisions.
+- Document superhuman methods of hand evaluation.
 
 ### What is the prior art?
 Previous efforts include:
@@ -102,6 +104,13 @@ You can contribute by:
 - Testing the system and providing feedback.
 
 ## Technical Details
+
+### What are the scalability issues?
+- Managability of millions of deal downloads.
+- Efficient creation of 1000's of augmented columns. Efficient particularly in memory usage and clock-on-wall performance.
+- Efficient when reading/writing of gigabytes of data, millions of rows of deals. Needs efficient structures for file, database.
+- Efficient dataframe structures. Pandas couldn't scale but Polars does. There's millions of rows in dataframes.
+- Efficient Polars wrangling: selecting, filtering, joining.
 
 ### What are the hardware requirements for the project?
 To replicate the entire pipeline requires a beefy computer system preferably with 512GB of RAM (sic) and 2TB of fast storage. Possibly a more modest system can be used, one having 64GB of RAM, if the CPU and disk I/O are able to compensate for the reduced RAM size. The actual system used for development is a Dell R630 system with dual Intel Xeons (total of 12 cores), 1.5TB of RAM (sic) and dual 2TB SATA SSDs in RAID 0. While this may appear to be a daunting piece of hardware, it's less than the price of a high-end GPU and easily obtainable on eBay. No GPU is needed in the current phase of the project.

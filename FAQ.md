@@ -158,9 +158,6 @@ Yes, AI can outperform humans by:
 **Poker (Libratus & Pluribus vs. Professionals)**  
 - [Science Magazine: Superhuman AI for Multiplayer Poker](https://www.science.org/doi/10.1126/science.aay2400)  
 
-**Bridge (AI Progress in Card Play and Bidding)**  
-- [Bloomberg: Bridge AI and the Quest for Mastery](https://www.bloomberg.com/news/articles/2019-07-26/bridge-ai-follows-deepmind-s-lead-to-master-a-longheld-human-edge) *(may require subscription)*
-
 **Real-Time Strategy Games (Dota 2 & StarCraft II)**  
 - [OpenAI: OpenAI Five and Dota 2](https://openai.com/blog/openai-five/)  
 - [DeepMind Blog: AlphaStar’s StarCraft II Achievements](https://deepmind.com/blog/article/alphastar-mastering-real-time-strategy-game-starcraft-ii)

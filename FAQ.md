@@ -153,6 +153,7 @@ Yes, AI can outperform humans by:
 **Go (AlphaGo vs. Lee Sedol, 2016)**  
 - [Nature: AlphaGo Mastering the Game of Go](https://www.nature.com/articles/nature16961)  
 - [DeepMind’s Official Case Study on AlphaGo](https://deepmind.com/research/case-studies/alphago-the-story-so-far)
+- [Move 37: Artificial Intelligence, Randomness, and Creativity](https://www.johnmenick.com/writing/move-37-alpha-go-deep-mind.html)
 
 **Poker (Libratus & Pluribus vs. Professionals)**  
 - [Science Magazine: Superhuman AI for Multiplayer Poker](https://www.science.org/doi/10.1126/science.aay2400)  

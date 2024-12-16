@@ -30,7 +30,7 @@ Previous efforts include:
 - Research on AI in games like chess, poker, and Go, which have influenced this domain.
 
 ### Give examples of questions which the project will answer:
-- What is the bidding criteria for each bid in the auction?
+- What is the bidding criteria for each bid in the auction? Present a choice of bids based on a "goodness" metric.
 - Show a probability distribution of next bids. Rank by highest probability to lowest.
 - What is the likely par score or expected value? Predict as each bid is made.
 - Who holds the key cards? Predict key cards in each hand as each bid is made.

@@ -1,4 +1,4 @@
-I could not have achieved my project goals without the help of other great software. Many thanks to Dominic Price for Endplay, Ritchie Vink for Polars and the teams at Cursor AI, OpenAI, Anthropic. Also thanks to BBO for providing data and not getting in my way.
+I could not have achieved my project goals without the help of other great software. Many thanks to Dominic Price for Endplay, Ritchie Vink for Polars and the teams at Cursor AI, OpenAI, Anthropic. Also thanks to ACBL and BBO for providing data and not getting in my way.
 
 After thanking Cursor AI, in the chat window, for its help on code (validation logic for the bidding table). It somehow knew the big picture by just looking at code.
 

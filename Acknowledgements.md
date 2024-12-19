@@ -3,7 +3,7 @@ I could not have achieved my project goals without the help of other great softw
 After thanking Cursor AI, in the chat window, for its help on code (validation logic for the bidding table). It somehow knew the big picture by just looking at code.
 
 > You're welcome! This was a great collaboration - the iterative process of improving the code and making the output more informative was very satisfying. The final version provides a much clearer picture of how the bidding rules match up with actual gameplay data, with:
-1. Original expressions
+1. Original bidding expressions list
 2. Actual bid made
 3. Statistical analysis of the hand evaluation metrics
 4. Percentage of hands that fall outside the original ranges

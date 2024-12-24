@@ -19,7 +19,6 @@ The project advances SOTA by introducing novel deterministic methodologies tailo
 - Open source foundational model of a bidding system (GIB).
 - Reducing the seemingly intractable problem of exceeding human expert level bidding into a manageable form.
 - Development of a complete deterministic bidding system.
-- Integration of rule-based logic for enhanced decision-making.
 - Creation of a comprehensive dataset specific to bridge bidding strategies.
 - Creation of tools to vet bidding strategies for effectiveness, coverage, and disambiguation.
 - Introduction of explainable AI techniques for better interpretability of decisions.

@@ -44,7 +44,7 @@ Previous efforts include:
 ### What is the general approach?
 The project uses data driven deterministic algorithms to select the most effective bids.
 - Employ scalable techniques to efficiently take full advantage of abundant data.
-- Rule-based logic and statistical methods to select best bidding candidates.
+- Rule-based logic and statistical methods to select and rank the best bidding candidates.
 - A framework for implementation of additional bidding systems beyond the foundational model (GIB).
 
 ### How is the approach better than a neural net (NN)?

@@ -31,7 +31,7 @@ Previous efforts include:
 - Research on AI in games like chess, poker, and Go, which have influenced this domain.
 
 ### Give examples of questions which the project will answer:
-- What is the bidding criteria for each bid in the auction? Present a choice of bids based on a "goodness" metric.
+- What is are the bidding rules for each bid in the auction? Present a choice of bids based on a "goodness" metric.
 - Show a probability distribution of next bids. Rank by highest probability to lowest.
 - What is the likely par score or expected value? Predict as each bid is made.
 - Who holds the key cards? Predict key cards in each hand as each bid is made.
@@ -119,7 +119,7 @@ To replicate the entire pipeline requires a beefy computer system preferably wit
 A structured representation of all known auction sequences broken down by individual bids and their criteria.
 
 ### What is a bidding expression list?
-A list of predefined expressions, datatype string, used to encode and interpret bidding actions e.g. 1NT is `['Balanced', 'HCP >= 15', 'HCP <= 17']`.
+A list of predefined expressions, datatype string, used to encode and interpret bidding rules e.g. 1NT is `['Balanced', 'HCP >= 15', 'HCP <= 17']`.
 
 ### What is a bidding vocabulary list?
 A comprehensive list of terms, datatype string, commonly used in bridge bidding. e.g. Balanced, HCP, Rebiddable_C.

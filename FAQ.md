@@ -31,7 +31,7 @@ Previous efforts include:
 - Research on AI in games like chess, poker, and Go, which have influenced this domain.
 
 ### Give examples of questions which the project will answer:
-- What is the bidding criteria for each bid in the auction? Present a choice of bids based on a "goodness" metric.
+- What is are the bidding rules for each bid in the auction? Present a choice of bids based on a "goodness" metric.
 - Show a probability distribution of next bids. Rank by highest probability to lowest.
 - What is the likely par score or expected value? Predict as each bid is made.
 - Who holds the key cards? Predict key cards in each hand as each bid is made.
@@ -44,7 +44,7 @@ Previous efforts include:
 ### What is the general approach?
 The project uses data driven deterministic algorithms to select the most effective bids.
 - Employ scalable techniques to efficiently take full advantage of abundant data.
-- Rule-based logic and statistical methods to select best bidding candidates.
+- Rule-based logic and statistical methods to select and rank the best bidding candidates.
 - A framework for implementation of additional bidding systems beyond the foundational model (GIB).
 
 ### How is the approach better than a neural net (NN)?
@@ -68,12 +68,13 @@ A deterministic approach is better for:
 ## Project Roadmap
 
 ### Do you have a roadmap?
-Yes. The roadmap includes:
-1. Research and data collection.
-2. Development of deterministic methods.
-3. Testing and validation against real-world results.
-4. Iterative improvement based on feedback.
-5. Public release and community engagement.
+The roadmap includes:
+1. Improve data collection methods.
+2. Improve data structures.
+3. Development of deterministic methods.
+4. Testing and validation against real-world results.
+5. Iterative improvement based on feedback.
+6. Public release and community engagement.
 
 ### What is the current status?
 The project is in the final development phase focusing on making the bidding table complete and accurate.
@@ -106,10 +107,10 @@ You can contribute by:
 
 ### What are the scalability issues?
 - Managability of millions of deal downloads.
-- Efficient creation of 1000's of augmented columns. Efficient particularly in memory usage and clock-on-wall performance.
-- Efficient when reading/writing of gigabytes of data, millions of rows of deals. Needs efficient structures for file, database.
-- Efficient dataframe structures. Pandas couldn't scale but Polars does. There's millions of rows in dataframes.
-- Efficient Polars wrangling: selecting, filtering, joining.
+- Improve efficency creation of 1000's of augmented columns particularly in memory usage and clock-on-wall performance.
+- Improve efficency when reading/writing of gigabytes of data, millions of rows of deals. Needs efficient structures for datframes, file I/O, and database schema.
+- Improve efficency of dataframe structures. Pandas couldn't scale for this application but Polars does. There's millions of rows in dataframes.
+- Improve efficency Polars wrangling: selecting, filtering, joining.
 
 ### What are the hardware requirements for the project?
 To replicate the entire pipeline requires a beefy computer system preferably with 512GB of RAM (sic) and 2TB of fast storage. Possibly a more modest system can be used, one having 64GB of RAM, if the CPU and disk I/O are able to compensate for the reduced RAM size. The actual system used for development is a Dell R630 system with dual Intel Xeons (total of 12 cores), 1.5TB of RAM (sic) and dual 2TB SATA SSDs in RAID 0. While this may appear to be a daunting piece of hardware, it's less than the price of a high-end GPU and easily obtainable on eBay. No GPU is needed in the current phase of the project.
@@ -118,7 +119,7 @@ To replicate the entire pipeline requires a beefy computer system preferably wit
 A structured representation of all known auction sequences broken down by individual bids and their criteria.
 
 ### What is a bidding expression list?
-A list of predefined expressions, datatype string, used to encode and interpret bidding actions e.g. 1NT is `['Balanced', 'HCP >= 15', 'HCP <= 17']`.
+A list of predefined expressions, datatype string, used to encode and interpret bidding rules e.g. 1NT is `['Balanced', 'HCP >= 15', 'HCP <= 17']`.
 
 ### What is a bidding vocabulary list?
 A comprehensive list of terms, datatype string, commonly used in bridge bidding. e.g. Balanced, HCP, Rebiddable_C.

@@ -68,12 +68,13 @@ A deterministic approach is better for:
 ## Project Roadmap
 
 ### Do you have a roadmap?
-Yes. The roadmap includes:
-1. Research and data collection.
-2. Development of deterministic methods.
-3. Testing and validation against real-world results.
-4. Iterative improvement based on feedback.
-5. Public release and community engagement.
+The roadmap includes:
+1. Improve data collection methods.
+2. Improve data structures.
+3. Development of deterministic methods.
+4. Testing and validation against real-world results.
+5. Iterative improvement based on feedback.
+6. Public release and community engagement.
 
 ### What is the current status?
 The project is in the final development phase focusing on making the bidding table complete and accurate.

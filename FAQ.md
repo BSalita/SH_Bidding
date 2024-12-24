@@ -107,10 +107,10 @@ You can contribute by:
 
 ### What are the scalability issues?
 - Managability of millions of deal downloads.
-- Efficient creation of 1000's of augmented columns. Efficient particularly in memory usage and clock-on-wall performance.
-- Efficient when reading/writing of gigabytes of data, millions of rows of deals. Needs efficient structures for file, database.
-- Efficient dataframe structures. Pandas couldn't scale but Polars does. There's millions of rows in dataframes.
-- Efficient Polars wrangling: selecting, filtering, joining.
+- Improve efficency creation of 1000's of augmented columns particularly in memory usage and clock-on-wall performance.
+- Improve efficency when reading/writing of gigabytes of data, millions of rows of deals. Needs efficient structures for datframes, file I/O, and database schema.
+- Improve efficency of dataframe structures. Pandas couldn't scale for this application but Polars does. There's millions of rows in dataframes.
+- Improve efficency Polars wrangling: selecting, filtering, joining.
 
 ### What are the hardware requirements for the project?
 To replicate the entire pipeline requires a beefy computer system preferably with 512GB of RAM (sic) and 2TB of fast storage. Possibly a more modest system can be used, one having 64GB of RAM, if the CPU and disk I/O are able to compensate for the reduced RAM size. The actual system used for development is a Dell R630 system with dual Intel Xeons (total of 12 cores), 1.5TB of RAM (sic) and dual 2TB SATA SSDs in RAID 0. While this may appear to be a daunting piece of hardware, it's less than the price of a high-end GPU and easily obtainable on eBay. No GPU is needed in the current phase of the project.
